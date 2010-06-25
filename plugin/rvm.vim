@@ -26,8 +26,6 @@ function! rvm#statusline(...)
   endif
 endfunction
 
-set statusline+=%{rvm#statusline()}
-
 " }}}1
 
 let &cpo = s:cpo_save
