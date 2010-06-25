@@ -1,6 +1,6 @@
 # rvm.vim
 
-Combining the vim text editor the ruby version manager for good of mandkind.
+Combining the [vim text editor](http://www.vim.org) the [ruby version manager](http://rvm.beginrescueend.com/) for good of mandkind.
 
 ## Installing
 
