@@ -14,12 +14,16 @@ set cpo&vim
 
 " Code {{{1
 function! rvm#statusline(...)
-  let status ="[".$rvm_ruby_interpreter." ".$rvm_ruby_version
+  if !empty($rvm_ruby_string)
+    let status = "[".$rvm_ruby_string
+  endif
   if !empty($rvm_gemset_name )
     let status = status."@".$rvm_gemset_name
   endif
-  let status = status."]"
-  if empty($rvm_ruby_interpreter )
+  if !empty(status)
+    let status = status."]"
+  endif
+  if empty(status)
     return ''
   else
     return status
