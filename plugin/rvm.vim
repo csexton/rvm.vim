@@ -20,7 +20,14 @@ function! rvm#statusline(...)
   endif
   let status = status."]"
   if empty($rvm_ruby_interpreter )
-    return ''
+    " If there is a default ruby rvm won't set rvm_ruby_interpreter, but
+    " rvm_ruby_string will be set, so lets display that slightly less pretty
+    " string.
+    if !empty($rvm_ruby_string) 
+      return '['.$rvm_ruby_string.']'
+    else
+      return ''
+    endif
   else
     return status
   endif
