@@ -33,6 +33,14 @@ function! rvm#statusline(...)
   endif
 endfunction
 
+" Only display the ruby version if the filetype is ruby.
+function! rvm#statusline_ft_ruby(...)
+  if &filetype=='ruby'
+    return rvm#statusline()
+  else
+    return ''
+  endif
+endfunction
 " }}}1
 
 let &cpo = s:cpo_save
