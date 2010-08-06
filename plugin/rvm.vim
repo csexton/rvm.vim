@@ -13,7 +13,7 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 " Code {{{1
-function! rvm#statusline(...)
+function! Rvm#statusline()
   let status = ''
 
   if !empty($rvm_ruby_interpreter)
@@ -37,9 +37,9 @@ function! rvm#statusline(...)
 endfunction
 
 " Only display the ruby version if the filetype is ruby.
-function! rvm#statusline_ft_ruby(...)
+function! Rvm#statusline_ft_ruby()
   if &filetype=='ruby'
-    return rvm#statusline()
+    return Rvm#statusline()
   else
     return ''
   endif
