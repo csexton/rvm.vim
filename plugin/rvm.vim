@@ -30,6 +30,7 @@ function! Rvm#statusline()
 
   if !empty(status)
     let status = '['.status.']'
+    return status
   else
     return ''
   endif
