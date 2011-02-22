@@ -16,6 +16,9 @@ set cpo&vim
 function! rvm#statusline()
   let status = ''
 
+  let rvm_gemset = system('rvm gemset name')
+  let rvm_gemset = strpart(rvm_gemset, 0, strlen(rvm_gemset) - 1)
+
   if !empty($rvm_ruby_interpreter)
     let status = $rvm_ruby_interpreter.' '.$rvm_ruby_version
   elseif !empty($rvm_ruby_string)
@@ -24,8 +27,8 @@ function! rvm#statusline()
     let status = $rvm_ruby_string
   endif
 
-  if !empty($rvm_gemset_name)
-    let status = status.'@'.$rvm_gemset_name
+  if !empty(rvm_gemset)
+    let status = status.'@'.rvm_gemset
   endif
 
   if !empty(status)
