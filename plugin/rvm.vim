@@ -18,7 +18,7 @@ function! rvm#statusline()
 
   " Are we even using rvm?
   if !empty($rvm_path)
-    let status = $GEM_PATH
+    let status = split($GEM_PATH, ':')[0]
     let status = substitute(status, '.*/', '', '')
     " I can't decide if we need this: is there ever a case where
     " GEM_PATH is empty but RUBY_VERSION is _not_ empty?
