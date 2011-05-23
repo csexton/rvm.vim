@@ -6,7 +6,7 @@ Combining the [vim text editor](http://www.vim.org) the [ruby version manager](h
 
 Copy rvm.vim into your ~/.vim/plugin directory:
 
-    curl http://github.com/csexton/rvm.vim/raw/master/plugin/rvm.vim > ~/.vim/plugin/rvm.vim
+    curl -L http://github.com/csexton/rvm.vim/raw/master/plugin/rvm.vim > ~/.vim/plugin/rvm.vim
 
 ## Status line
 
